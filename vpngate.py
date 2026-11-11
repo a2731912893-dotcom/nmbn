@@ -51,7 +51,7 @@ VPNGATE_MIRROR = os.environ.get(
     "https://raw.githubusercontent.com/fdciabdul/Vpngate-Scraper-API/main/json/data.json",
 )
 # 已部署的 Cloudflare Worker 检测接口 (GET /check?proxyip=host:port, 实测确认)
-WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "https://check.helei.kdns.fr/check?sstp=vpn:vpn@")
+WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "hh.vansnd.kdns.fr/check?sstp=vpn:vpn@")
 CONCURRENCY = max(1, int(os.environ.get("CHECK_CONCURRENCY", "32")))   # 与 Worker 网页端一致的并发模型
 CHECK_TIMEOUT = float(os.environ.get("CHECK_TIMEOUT", "90"))          # 单请求客户端超时 (秒)
 MAX_CHECK_NODES = int(os.environ.get("MAX_CHECK_NODES", "0"))         # 0=不限; 本地测试可设小值
@@ -460,8 +460,119 @@ EDGE_HOSTS = [
     h.strip()
     for h in os.environ.get(
         "EDGE_HOSTS",
-        "saas.072159.xyz:443,hzytjy.cn:443,ali.nonull.pp.ua:443,auto.dolby.dpdns.org:443,"
-        "cdn.cnno.de:443,saas.sin.fan:443,cf.777791.xyz:443",
+        "www.mfyx.cn:2096
+cf.877774.xyz:8443,
+cf.vvhan.com:443,
+www.wuduanyun.com:2087,
+www.bis.gov:2087,
+jobsdb.com:8443,
+staticdelivery.nexusmods.com:2087,
+constitution.congress.gov:8443,
+funko.com:2053,
+versantstore.pearson.com:2096,
+cdn.667891.xyz:443,
+www.gov.il:2083,
+cdn.7zz.cn:2087,
+www.blibli.com:2096,
+cf.nyanya.moe:443,
+serviceshub.samsclub.com:2053,
+www.sofi.com:2083,
+ahrefs.com:2083,
+fn.130519.xyz:2083,
+linear.app:2087,
+rocketreach.co:2096,
+absen.com:2096,
+mfa.gov.ua:8443,
+clickhouse.com:8443,
+grass.io:443,
+journeys.com:2053,
+www.apnic.net:2053,
+api.uniapi.io:2096,
+i.pages.dev:443,
+api.producthunt.com:2087,
+my.vultr.com:8443,
+sourceforge.net:8443,
+www.visa.com.sg:2096,
+www.visa.com.tw:2096,
+zabc.net:443,
+debot.ai:2096,
+packtpub.com:2053,
+dev.graco.com:2053,
+spirol.com:2096,
+alternativeto.net:8443,
+cdn.violet.vin:443,
+helium.computer:2096,
+sunkist.com:443,
+stores.staples.com:2053,
+saas.sin.fan:443,
+moodle.org:2087,
+www.redboxtools.com:8443,
+www.postman.com:2083,
+images.chesscomfiles.com:2087,
+api2-ide.imgnxa.com:2087,
+investorrelations.medtronic.com:2083,
+deepseek.com.hk:443,
+resources.biginterview.com:2087,
+hitcon.org:2083,
+carpt.net:2087,
+cf.1o.ee:443,
+emos.prlo.de:443,
+www.libvio.site:2053,
+www.shopify.com:2083,
+www.timbuktutravel.com:2096,
+www.dwk.com:2083,
+buyshoes.shop:2083,
+www.whatismyip.com:443,
+c-power.com.cn:2087,
+skk.moe:2083,
+cdnjs.com:443,
+kniu.cc:443,
+www.donaldjtrump.com:2087,
+macked.app:8443,
+cdn.tzpro.xyz:2053,
+moegirl.icu:2096,
+www.petronaftco.com:2096,
+informahealthcare.com:443,
+i.pixiv.nl:443,
+dango.co:2087,
+stonexbullion.com:2096,
+224322.xyz:2087,
+salaryexpert.com:443,
+webn.cc:443,
+sharray.net:8443,
+www.trumpgolf.com:2096,
+yong.m123.org:2096,
+redis.io:2053,
+mrmacintosh.com:443,
+fictiv.com:2053,
+www.ox.ac.uk:2096,
+easylist.to:2053,
+wallpaperflare.com:2087,
+cozylife.app:2087,
+www.itedev.com:443,
+ping.pe:2096,
+snipaste1.speedip.eu.org:443,
+builtbybuffalo.com:443,
+academy.7shifts.com:2083,
+www.pixelexperience.org:2087,
+mokeedev.com:2053,
+de.102198.xyz:2053,
+seo.07yue.com:2053,
+www.carousell.sg:443,
+nist.gov:443,
+bbs.alipansou.com:2096,
+academy.mastercard.com:2053,
+www.vastnovel.com:2083,
+cdn.cnno.de:2096,
+ikankeji.com:2083,
+www.mlkj888.com:2087,
+cf.0sm.com:2083,
+cf-ip-site.vov.moe:2087,
+cfplus.255520.xyz:2053,
+cdn.fiatnorm.us.kg:8443,
+www.people.inc:8443,
+47bt.com:2096,"
+        "cf.3666888.xyz:8443,cdn.ctn32.us.kg:2087,eii.at:2053",
     ).split(",")
     if h.strip()
 ]
@@ -522,8 +633,8 @@ def build_hosts_text(data):
 
 
 # edgetunnel 完整订阅 (vless://) 配置
-EDT_UUID = os.environ.get("EDT_UUID", "90c14586-42a5-4c30-959d-8b36608d67f7")
-EDT_DOMAIN = os.environ.get("EDT_DOMAIN", "ed.xiaolei.qzz.io")
+EDT_UUID = os.environ.get("EDT_UUID", "12454b9f-9566-4c31-8f3b-7990e2fcea1f")
+EDT_DOMAIN = os.environ.get("EDT_DOMAIN", "plain-wind-9b89.a2731912893.workers.dev")
 EDT_FINGERPRINT = os.environ.get("EDT_FINGERPRINT", "chrome")
 SUB_URL = os.environ.get("SUB_URL", "https://jerylihub.github.io/gate/sub.txt")
 
